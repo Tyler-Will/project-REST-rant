@@ -1,6 +1,11 @@
 const router = require('express').Router()
 
+
 // GET /places
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
 router.get('/', (req, res) => {
   let places = [{
     name: 'H-Thai-ML',
@@ -22,12 +27,13 @@ router.get('/', (req, res) => {
     pic: 'public/images/nossie.png'
   }]
   
-/*Check back later*/res.render('places/index', { places })
+res.render('places/index', { places })
   })
-  router.get('/new', (req, res) => {
-    res.render('places/new')
-  })
-    
+  //POST places
+  router.post('/', (req, res) => {
+    console.log(req.body)
+    res.send('POST /places')
+  })  
 
 module.exports = router
 
