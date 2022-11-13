@@ -1,17 +1,13 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
 
-router.get('/', (req, res) => {
+/*router.get('/', (req, res) => {
     res.render('places/index', { places })
-})
+})*/
 
 // GET /places
-router.get('/new', (req, res) => {
-  res.render('places/new')
-})
-
 router.get('/', (req, res) => {
-  let places = [{
+  /*let places = [{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
@@ -29,12 +25,16 @@ router.get('/', (req, res) => {
     state: 'CA',
     cuisines: 'Roasted Rat, Thing on a stick',
     pic: 'public/images/nossie.png'
-  }]
+  }]*/
 res.render('places/index', { places })
+  });
+
+  router.get('/new', (req, res) => {
+    res.render('places/new')
   })
+
   //POST places
   router.post('/', (req, res) => {
-    console.log(req.body)
     if (!req.body.pic) {
       // Default image if one is not provided
       req.body.pic = 'http://placekitten.com/400/400'
