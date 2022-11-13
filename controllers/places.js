@@ -7,19 +7,19 @@ router.get('/', (req, res) => {
     city: 'Seattle',
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
-    pic: 'http://placekitten.com/250/250'
+    pic: 'public/images/fried-rice.jpg'
   }, {
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: 'http://placekitten.com/250/250'
+    pic: 'public/images/ramen.jpg'
   }, {
     name: 'Schrecknet Cafe',
     city: 'Beneath Los Angeles',
     state: 'CA',
     cuisines: 'Roasted Rat, Thing on a stick',
-    pic: 'https://m.media-amazon.com/images/I/81VadNbPilL._AC_UY741_.jpg'
+    pic: 'public/images/nossie.png'
   }]
   
 /*Check back later*/res.render('places/index', { places })
