@@ -33,6 +33,20 @@ res.render('places/index', { places })
     res.render('places/new')
   })
 
+  router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      res.render('places/show', { place: places[id] })
+    }
+  })
+  
+
   //POST places
   router.post('/', (req, res) => {
     if (!req.body.pic) {
@@ -48,6 +62,7 @@ res.render('places/index', { places })
     places.push(req.body)
     res.redirect('/places')
   })
+  
   
 
 module.exports = router
