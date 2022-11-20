@@ -44,3 +44,7 @@ main {
   margin-right: auto;
   width: 50%;
 }
+.contentImage {
+  height: 300px;
+  width: 300px;
+}
